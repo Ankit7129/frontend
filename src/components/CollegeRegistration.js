@@ -9,7 +9,7 @@ function CollegeRegistration({ setName }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/colleges/register', {
+      const response = await axios.post('https://mern-college-backend.onrender.com/api/colleges/register', {
         name,
         email,
         password,
