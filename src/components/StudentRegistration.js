@@ -9,13 +9,14 @@ function StudentRegistration({ setName }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/students/register', {
+      // Update the URL to your deployed backend
+      const response = await axios.post('https://mern-college-backend.onrender.com/api/students/register', {
         name,
         email,
         password,
       });
-      setName(response.data.message);
-      setStudentName('');
+      setName(response.data.message); // Update the name state with the response message
+      setStudentName(''); // Clear the input fields
       setEmail('');
       setPassword('');
     } catch (error) {
